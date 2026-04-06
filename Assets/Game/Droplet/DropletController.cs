@@ -3,14 +3,16 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class DropletController : MonoBehaviour
 {
-    [SerializeField]
-    private float Speed;
+    // Public
+    public float Speed;
 
+    // Private
     private Rigidbody Rigidbody;
+    private MeshRenderer Renderer;
     
-    private WavefieldRenderer Renderer;
+    private BathRenderer BathRenderer;
     
     private Vector2 MovementInput;
     private Vector2 SmoothedMovementInput;
@@ -21,8 +23,9 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         Rigidbody = GetComponent<Rigidbody>();
+        Renderer = GetComponent<MeshRenderer>();
         
-        Renderer = FindFirstObjectByType<WavefieldRenderer>();
+        BathRenderer = FindFirstObjectByType<BathRenderer>();
     }
 
     private void OnEnable()
@@ -33,20 +36,15 @@ public class PlayerMovement : MonoBehaviour
         switch (PlayerIndex)
         {
             case 0:
-                GetComponent<MeshRenderer>().material =
-                    Resources.Load<Material>("Droplet0Material");
-                
-                Renderer.SetDroplet0(transform);
+                BathRenderer.Droplet0 = this.gameObject;
+                Renderer.material.color = Color.red;
                 break;
             case 1:
-                GetComponent<MeshRenderer>().material =
-                    Resources.Load<Material>("Droplet1Material");
-                
-                Renderer.SetDroplet1(transform);
+
+                BathRenderer.Droplet1 = this.gameObject;
+                Renderer.material.color = Color.blue;
                 break;
         }
-        
-        Debug.Log("Joined");
     }
     
     private void OnDisable()
@@ -57,14 +55,12 @@ public class PlayerMovement : MonoBehaviour
         switch (PlayerIndex)
         {
             case 0:
-                Renderer.UnsetDroplet0();
+                BathRenderer.Droplet0 = null;
                 break;
             case 1:
-                Renderer.UnsetDroplet1();
+                BathRenderer.Droplet1 = null;
                 break;
         }
-        
-        Debug.Log("Left");
     }
 
     private void FixedUpdate()

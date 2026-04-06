@@ -1,5 +1,6 @@
 {
-    "name": "DropetInteractions",
+    "version": 1,
+    "name": "DropetInputActions",
     "maps": [
         {
             "name": "Player",

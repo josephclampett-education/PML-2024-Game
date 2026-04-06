@@ -23,30 +23,31 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Droplet1Material
-  m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
+  m_Name: BathMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 6110b0e87baae7347830ee5a12896b96,
+    type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _DISABLE_DECALS
   - _DISABLE_SSR_TRANSPARENT
   - _ENABLE_FOG_ON_TRANSPARENT
+  - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords:
   - _HEIGHTMAP
   - _NORMALMAP_TANGENT_SPACE
-  - _SURFACE_TYPE_TRANSPARENT
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 3001
   stringTagMap:
     MotionVector: User
     RenderType: Transparent
   disabledShaderPasses:
   - MOTIONVECTORS
   - TransparentDepthPostpass
-  - RayTracingPrepass
   - TransparentBackface
+  - RayTracingPrepass
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -207,13 +208,13 @@ Material:
     - _AlphaCutoffPostpass: 0.5
     - _AlphaCutoffPrepass: 0.5
     - _AlphaCutoffShadow: 0.5
-    - _AlphaDstBlend: 10
+    - _AlphaDstBlend: 1
     - _AlphaRemapMax: 1
     - _AlphaRemapMin: 0
     - _AlphaSrcBlend: 1
     - _Amplitude: 0.15
     - _Anisotropy: 0
-    - _BlendMode: 0
+    - _BlendMode: 1
     - _BumpScale: 1
     - _CoatMask: 0
     - _ColorMask: 15
@@ -234,7 +235,7 @@ Material:
     - _DoubleSidedEnable: 0
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 1
-    - _DstBlend: 10
+    - _DstBlend: 1
     - _DstBlend2: 10
     - _EmissiveColorMode: 1
     - _EmissiveExposureWeight: 1
@@ -259,7 +260,7 @@ Material:
     - _HeightTessAmplitude: 3
     - _HeightTessCenter: 0
     - _InvTilingScale: 1
-    - _Ior: 1.403
+    - _Ior: 1.5
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
@@ -316,12 +317,12 @@ Material:
     - _SubsurfaceMask: 1
     - _SupportDecals: 0
     - _SurfaceType: 1
-    - _Tesselation_Factor: 33.58
+    - _Tesselation_Factor: 10.16
     - _TessellationBackFaceCullEpsilon: -0.42
     - _TessellationFactor: 33
-    - _TessellationFactorMaxDistance: 745
-    - _TessellationFactorMinDistance: 19.9
-    - _TessellationFactorTriangleSize: 313.8
+    - _TessellationFactorMaxDistance: 123.1
+    - _TessellationFactorMinDistance: 5.15
+    - _TessellationFactorTriangleSize: 5.3
     - _TessellationMaxDisplacement: 18.41
     - _TessellationMode: 0
     - _TessellationObjectScale: 1
@@ -336,7 +337,7 @@ Material:
     - _TransparentCullMode: 2
     - _TransparentDepthPostpassEnable: 0
     - _TransparentDepthPrepassEnable: 1
-    - _TransparentSortPriority: 0
+    - _TransparentSortPriority: 1
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 1
     - _UVBase: 0
@@ -351,8 +352,8 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.13977551, b: 1, a: 0.45490196}
-    - _Color: {r: 0, g: 0.13977548, b: 1, a: 0.45490196}
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

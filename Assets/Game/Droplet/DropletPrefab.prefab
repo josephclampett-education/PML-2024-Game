@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4545826382832522777}
   - component: {fileID: 1283899249266136201}
   m_Layer: 0
-  m_Name: Droplet
+  m_Name: DropletPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
