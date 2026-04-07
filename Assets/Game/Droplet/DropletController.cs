@@ -40,7 +40,6 @@ public class DropletController : MonoBehaviour
                 Renderer.material.color = Color.red;
                 break;
             case 1:
-
                 BathRenderer.Droplet1 = this.gameObject;
                 Renderer.material.color = Color.blue;
                 break;
